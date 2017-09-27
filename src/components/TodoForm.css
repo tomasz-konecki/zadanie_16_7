@@ -1,0 +1,10 @@
+.TodoForm {
+    width: 360px;
+    margin-bottom: 30px;
+    display: flex;
+}
+.input {
+    width: 150px;
+    margin-right: 20px;
+    margin-left: 15px;
+}
