@@ -23,14 +23,8 @@ class App extends React.Component {
                     text: 'Do something 3',
                     id: 3,
                     remove: this.removeTodo.bind(this)
-                },
-                {
-                    text: 'Do something 4',
-                    id: 4,
-                    remove: this.removeTodo.bind(this)
                 }
-
-            ],
+            ]
         };
     }
     addTodo(val) {
