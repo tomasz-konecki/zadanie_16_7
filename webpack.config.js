@@ -6,7 +6,7 @@ const webpack = require('webpack'),
     env = process.env.NODE_ENV || 'development',
 
     plugins = [new HtmlWebpackPlugin({
-        template: './src/index.html',
+        template: './src/index.ejs',
         filename: 'index.html',
         inject: 'body'
         })
@@ -29,7 +29,7 @@ module.exports = {
         './src/index.js'
     ],
     output: {
-        path:__dirname + '/src',
+        path:__dirname + '/dist',
         filename: 'app.bundle.js'
     },
 
