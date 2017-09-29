@@ -7,12 +7,18 @@ const TodoForm = props => {
     
         <form className={style.TodoForm}>
             <label>Enetr a task:</label>
-            <input type='text' id='task' className={style.input} />
+            <input 
+                type='text'
+                id='task'
+                className={style.input} 
+                value={props.value}
+                onChange={(event) => props.updateValue(event.target.value)}
+            /> 
     
-            <button onClick={() => this.props.add(event.target.value)}>Submit</button>
+            <button onClick={() => props.add()}>Submit</button> 
         </form>
     )
 
 }
 
-export default TodoForm;
+export default TodoForm; 

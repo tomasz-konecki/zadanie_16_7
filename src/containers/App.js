@@ -13,31 +13,32 @@ class App extends React.Component {
                 {
                     text: 'Do something 1',
                     id: 1,
-                    remove: this.removeTodo.bind(this)
                 },
                 {
                     text: 'Do something 2',
                     id: 2,
-                    remove: this.removeTodo.bind(this)
                 },
                 {
                     text: 'Do something 3',
                     id: 3,
-                    remove: this.removeTodo.bind(this)
                 }
-            ]
+            ],
+            value: ""
         };
     }
-    addTodo(val) {
+
+    addTodo() {
         const todo = {
-            text: val,
+            text: this.state.value,
             id: uuid.v4(),
         };
         const data = [...this.state.data, todo];
         this.setState({
-            data
+            data,
+            value: ""
         });
     }
+
     removeTodo(id) {
         const remainder = this.state.data.filter(todo => todo.id !== id);
         this.setState({
@@ -45,13 +46,19 @@ class App extends React.Component {
         });
     }
 
+    updateValue(newValue) {
+        this.setState({
+            value: newValue
+        }).bind(this)
+    };
+
     render() {
         return (
             <div className={style.TodoApp}>
                 <Title title="APPLICATION 'TODO'" />
-                <TodoForm add={this.addTodo} />
+                <TodoForm add={this.addTodo} updateValue={this.updateValue} value={this.state.value} />
                 <p className={style.number}>Number of tasks: {this.state.data.length}</p>
-                <TodoList list={this.state.data} />
+                <TodoList list={this.state.data} remove={this.removeTodo}/> 
 
             </div>
         );
