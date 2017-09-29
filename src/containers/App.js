@@ -25,6 +25,11 @@ class App extends React.Component {
             ],
             value: ""
         };
+
+        this.addTodo = this.addTodo.bind(this);
+        this.removeTodo = this.removeTodo.bind(this);
+        this.updateValue = this.updateValue.bind(this);
+
     }
 
     addTodo() {
@@ -49,8 +54,8 @@ class App extends React.Component {
     updateValue(newValue) {
         this.setState({
             value: newValue
-        }).bind(this)
-    };
+        });
+    }
 
     render() {
         return (
