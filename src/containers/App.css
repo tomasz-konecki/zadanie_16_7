@@ -3,7 +3,8 @@
 .TodoApp {
     font-family: 'Open Sans', sans-serif;
     background-color: #F5F5F5;
-    color: #042072;
+    /* color: #042072; */
+    color: green;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
